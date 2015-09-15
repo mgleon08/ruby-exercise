@@ -1,4 +1,4 @@
- class MyCar
+ class Vehicle
   attr_accessor :color
   attr_reader :year
   attr_reader :model
@@ -38,10 +38,30 @@
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
-  def to_s
-    puts "My car is a #{self.color}, #{self.year}, #{@model}!"
   end
-end
 
-lumina = MyCar.new(1997, 'chevy lumina', 'white')
-lumina.to_s
+  class MyCar < Vehicle
+
+    NUMBER_OF_DOORS = 4
+
+    def to_s
+      puts "My car is a #{color}, #{year}, #{model} !"
+    end
+
+  end
+
+  class MyTruck < Vehicle
+
+     NUMBER_OF_DOORS = 2
+
+    def to_s
+      puts "My Truck is a #{color}, #{year}, #{model} !"
+    end
+
+  end
+
+car = MyCar.new(1997, 'chevy lumina', 'white')
+truck = MyTruck.new(2014, 'hello', 'black')
+
+puts car
+puts truck

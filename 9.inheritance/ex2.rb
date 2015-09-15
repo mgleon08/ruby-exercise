@@ -1,13 +1,15 @@
- class MyCar
+ class Vehicle
   attr_accessor :color
   attr_reader :year
   attr_reader :model
+  @@number_of_vehicles = 0
 
   def initialize(year,model,color)
     @year = year
     @color = color
     @model = model
     @current_speed = 0
+    @@number_of_vehicles += 1
   end
 
   def speed_up(number)
@@ -34,14 +36,38 @@
     puts "You new #{color} paint job looks great!"
   end
 
-  def gas_mileage(gallons, miles)
+  def self.gas_mileage(gallons, miles)
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
-  def to_s
-    puts "My car is a #{self.color}, #{self.year}, #{@model}!"
+  def self.number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
   end
 end
 
-lumina = MyCar.new(1997, 'chevy lumina', 'white')
-lumina.to_s
+  class MyCar < Vehicle
+
+   NUMBER_OF_DOORS = 4
+
+   def to_s
+    puts "My car is a #{color}, #{year}, #{model} !"
+  end
+
+  end
+
+  class MyTruck < Vehicle
+
+  NUMBER_OF_DOORS = 2
+
+  def to_s
+    puts "My Truck is a #{color}, #{year}, #{model} !"
+  end
+
+  end
+
+car = MyCar.new(1997, 'chevy lumina', 'white')
+truck = MyTruck.new(2014, 'hello', 'black')
+
+puts car
+puts truck
+Vehicle.number_of_vehicles
