@@ -49,8 +49,8 @@ end
 
    NUMBER_OF_DOORS = 4
 
-   def to_s
-    puts "My car is a #{color}, #{year}, #{model} !"
+  def to_s
+    "My car is a #{color}, #{year}, #{model} !"
   end
 
   end
@@ -60,7 +60,7 @@ end
   NUMBER_OF_DOORS = 2
 
   def to_s
-    puts "My Truck is a #{color}, #{year}, #{model} !"
+    "My Truck is a #{color}, #{year}, #{model} !"
   end
 
   end
